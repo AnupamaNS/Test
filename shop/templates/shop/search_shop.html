@@ -1,0 +1,36 @@
+{% extends 'temp/user.html' %}
+{% block shop %}
+	<h1 align="center">Search Shop</h1>
+	<form method="post">
+        {% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>Search Shop:</td>
+				<td><input type="text" name="psch" required=""></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="POST"></td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<table align="center" border="1">
+		<tr>
+			<td>ID</td>
+			<td>Shop Name</td>
+			<td>Location</td>
+			<td>Email ID</td>
+			<td>Contact</td>
+		</tr>
+        {% for obj in obval %}
+		<tr>
+			<td>{{ obj.s_id }}</td>
+			<td>{{ obj.s_name }}</td>
+			<td>{{ obj.location }}</td>
+			<td>{{ obj.email }}</td>
+			<td>{{ obj.contact }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+{% endblock %}

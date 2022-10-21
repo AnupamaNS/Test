@@ -1,0 +1,25 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">View Complaint</h1>
+	<table align="center" border="1">
+		<tr>
+			<td>ID</td>
+			<td>UserName</td>
+			<td>Complaint</td>
+            <td>Time</td>
+			<td>Date</td>
+			<td></td>
+		</tr>
+        {% for i in obval %}
+		<tr>
+			<td>{{ i.cp_id }}</td>
+			<td>{{ i.u.u_name }}</td>
+			<td>{{ i.complaint }}</td>
+            <td>{{ i.time }}</td>
+			<td>{{ i.date }}</td>
+			<td><a href="{% url 'replay' idd=i.cp_id %}">Reply</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+
+{% endblock %}

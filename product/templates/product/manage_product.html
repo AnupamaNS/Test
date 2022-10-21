@@ -1,0 +1,24 @@
+{% extends 'temp/shop.html' %}
+{% block mng %}
+	<h1 align="center">Manage Products</h1>
+	<table align="center" border="1">
+	<tr>
+		<td>ID</td>
+		<td>Product Name</td>
+		<td>Price</td>
+		<td>Category</td>
+		<td>Quantity</td>
+	</tr>
+        {% for i in obval %}
+	<tr>
+		<td>{{ i.p_id }}</td>
+		<td>{{ i.p_name }}</td>
+		<td>{{ i.price }}</td>
+		<td>{{ i.c_id }}</td>
+		<td>{{ i.qty }}</td>
+		<td><a href="{% url 'update' idd=i.p_id %}">UPDATE</a></td>
+        <td><a href="{% url 'delete' idd=i.p_id %}">DELETE</a></td>
+	</tr>
+        {% endfor %}
+</table>
+{% endblock %}

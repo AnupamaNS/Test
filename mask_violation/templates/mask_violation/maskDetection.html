@@ -1,0 +1,27 @@
+{% extends 'temp/admin.html' %}
+{% block mask %}
+<h1 align="center">Mask Violation</h1>
+<table align="center" border="1">
+   <tr>
+       <td>ID</td>
+       <td>Location</td>
+       <td>Date</td>
+       <td>Time</td>
+       <td>Status</td>
+       <td>Temperature</td>
+   </tr>
+    {% for i in obval %}
+    <tr>
+        <td>{{ i.v_id }}</td>
+        <td>{{ i.location }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        <td>{{ i.status }}</td>
+        <td>{{ i.temperature }}</td>
+    </tr>
+    {% endfor %}
+
+
+
+</table>
+{% endblock %}

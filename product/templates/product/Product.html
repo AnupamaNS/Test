@@ -1,0 +1,33 @@
+{% extends 'temp/shop.html' %}
+{% block reg %}
+	<h1 align="center">Product</h1>
+	<form method="post">
+		<table align="center">
+            {% csrf_token %}
+			<tr>
+				<td>Product Name:</td>
+				<td><input type="text" name="prod" required=""></td>
+			</tr>
+			<tr>
+				<td>Price:</td>
+				<td><input type="text" name="pri" required=""></td>
+			</tr>
+			<tr>
+				<td>Quantity:</td>
+				<td><input type="text" name="qty" required=""></td>
+			</tr>
+			<tr>
+				<td>Category:</td>
+				<td><select name="cat">
+                    {% for i in aa %}
+                    <option value="{{i.c_name}}">{{ i.c_name}}</option>
+                    {% endfor %}
+                </select>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="sub" value="Register"></td>
+			</tr>
+        </table>
+	</form>
+{% endblock %}

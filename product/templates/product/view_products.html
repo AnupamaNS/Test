@@ -1,0 +1,24 @@
+{% extends 'temp/admin.html' %}
+{% block view %}
+	<h1 align="center"> view products</h1>
+	<table align="center" border="1">
+	<tr>
+		<td>ID</td>
+		<td>Name</td>
+		<td>Price</td>
+		<td>Quantity</td>
+        <td>Category</td>
+	</tr>
+        {% for i in obval %}
+	<tr>
+        <td>{{ i.p_id }}</td>
+		<td>{{ i.p_name }}</td>
+		<td>{{ i.price }}</td>
+        <td>{{ i.qty }}</td>
+        <td>{{ i.c_id}}</td>
+        <td><a href="{% url 'approve' idd=i.p_id %}">APPROVE</a></td>
+        <td><a href="{% url 'reject' idd=i.p_id %}">REJECT</a></td>
+	</tr>
+        {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'temp/main_home.html' %}
+{% block login %}
+	<h1 align="center">LOGIN</h1>
+	<form method="post">
+    {% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>user name</td>
+				<td><input type="text" name="uname" required=""></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="password" name="pass" required=""></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="sub" value="LOGIN"></td>
+			</tr>
+		</table>
+	</form>
+
+{% endblock %}

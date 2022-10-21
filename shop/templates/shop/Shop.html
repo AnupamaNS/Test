@@ -1,0 +1,37 @@
+{% extends 'temp/main_home.html' %}
+{% block shop %}
+	<h1 align="center">Shop Register</h1>
+	<form method="post">
+	<table align="center">
+        {% csrf_token %}
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="sname" required=""></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="Email" required="" value="@gmail.com"></td>
+		</tr>
+		<tr>
+			<td>User Name:</td>
+			<td><input type="text" name="uname" required=""></td>
+		</tr>
+		<tr>
+			<td>Contact:</td>
+			<td><input type="tel" name="ct" required="" pattern="[0-9]{10}"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="pwd" required=""></td>
+		</tr>
+		<tr>
+			<td>Location:</td>
+			<td><input type="text" name="loc" required=""></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="submit" value="Register"></td>
+		</tr>
+	</table>
+</form>
+{% endblock %}

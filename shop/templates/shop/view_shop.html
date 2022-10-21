@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 align="center">View Shop</h1>
+	<table align="center" border="1">
+		<tr>
+			<td>ID</td>
+			<td>ShopName</td>
+			<td>Username</td>
+			<td>Email</td>
+			<td>Contact</td>
+			<td>Location</td>
+			<td></td>
+		</tr>
+        {% for i in obval %}
+		<tr>
+			<td>{{ i.s_id }}</td>
+			<td>{{ i.s_name }}</td>
+			<td>{{ i.u_name }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.contact }}</td>
+			<td>{{ i.location }}</td>
+			<td><a href="{% url 'upd' idd=i.s_id %}">UPDATE</a></td><br>
+			<td><a href="{% url 'deleteshop' idd=i.s_id %}">DELETE</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+
+</body>
+</html>

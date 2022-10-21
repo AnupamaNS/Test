@@ -1,0 +1,29 @@
+{% extends 'temp/admin.html' %}
+{% block mng %}
+	<h1 align="center">Manage Shop</h1>
+	<table align="center" border="1">
+		<tr>
+			<td>ID</td>
+			<td>ShopName</td>
+			<td>Username</td>
+			<td>Email</td>
+			<td>Contact</td>
+            <td>Password</td>
+			<td>Location</td>
+			<td></td>
+		</tr>
+		{% for i in obval %}
+		<tr>
+			<td>{{ i.s_id }}</td>
+			<td>{{ i.s_name }}</td>
+			<td>{{ i.u_name }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.contact }}</td>
+            <td>{{ i.password }}</td>
+			<td>{{ i.location }}</td>
+			<td><a href="{% url 'approve1' idd=i.s_id %}">APPROVE</a></td>
+            <td><a href="{% url 'reject' idd=i.s_id %}">REJECT</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+{% endblock %}

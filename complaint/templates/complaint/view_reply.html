@@ -1,0 +1,21 @@
+{% extends 'temp/user.html' %}
+{% block view %}
+<h1 align="center">View Reply</h1>
+	<table align="center" border="1">
+		<tr>
+{#			<td>ID</td>#}
+            <td>Complaint</td>
+			<td>Reply</td>
+{#			<td></td>#}
+		</tr>
+{% for i in obval %}
+		<tr>
+
+{#			<td>{{ i. }}</td>#}
+			<td>{{ i.complaint}}</td>
+			<td>{{ i.reply}}</td>
+
+		</tr>
+ {% endfor %}
+	</table>
+{% endblock %}

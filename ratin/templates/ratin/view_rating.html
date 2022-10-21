@@ -1,0 +1,40 @@
+{% extends 'temp/admin.html' %}
+{% block rating %}
+<form>
+	<h2 align="center">VIEW RATING</h2>
+	<table border="1" align="center">
+		<tr>
+			<td>No</td>
+			<td>User Name</td>
+			<td>Date</td>
+            <td>Time</td>
+			<td>Rating</td>
+		</tr>
+        {% for x in objv %}
+
+
+
+		<tr>
+			<td>{{ x.r_id }}</td>
+			<td>{{ x.u.u_name }}</td>
+            <td>{{ x.date}}</td>
+            <td>{{ x.time }}</td>
+			{% if x.rating == 1 %}
+           <td style="color: yellow">&#9733;</td>
+          {% elif x.rating == 2 %}
+          <td style="color: yellow">&#9733;&#9733;</td>
+          {% elif x.rating == 3 %}
+          <td style="color: yellow">&#9733;&#9733;&#9733;</td>
+          {% elif x.rating == 4 %}
+          <td style="color: yellow">&#9733;&#9733;&#9733;&#9733;</td>
+          {% else %}
+          <td style="color: yellow">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+{% endif %}
+
+{#			<td></td>#}
+			<!-- <td><a href="">EDIT</a></td> -->
+		</tr>
+        {% endfor %}
+	</table>
+</form>
+{% endblock %}

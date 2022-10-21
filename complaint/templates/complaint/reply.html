@@ -1,0 +1,24 @@
+{% extends 'temp/admin.html' %}
+{% block rep %}
+	<h1 align="center">Reply</h1>
+	<form method="post">
+    {% csrf_token %}
+		<table align="center">
+            {% for x in obval %}
+            <tr>
+                <td>Complaint:</td>
+                <td><input type="text" name="cmp" value="{{ x.complaint }}" readonly></td>
+            </tr>
+            {% endfor %}
+			<tr>
+				<td>Reply:</td>
+				<td><textarea cols="21" rows="7" name="reply"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Post"></td>
+			</tr>
+		</table>
+	</form>
+
+{% endblock %}
